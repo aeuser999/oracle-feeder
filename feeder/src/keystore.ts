@@ -72,6 +72,7 @@ export async function save(
   const ciphertext = encrypt(
     JSON.stringify({
       privateKey: mnemonicKey.privateKey.toString(`hex`),
+      publicKey: (mnemonicKey.publicKey as Buffer).toString(`hex`),
       terraAddress: mnemonicKey.accAddress,
       terraValAddress: mnemonicKey.valAddress,
     }),
